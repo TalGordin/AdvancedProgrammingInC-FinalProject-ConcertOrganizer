@@ -302,11 +302,20 @@ MCS* makeMCSArr(int instrumentAmount) {
 	return MCSizes;
 }
 
-//******************************************MEMORY*************************
+void printCollection(Musician*** MusiciansCollection, MCS* MCSizes);
+
+//******************************************MEMORY & FILES*************************
 
 void checkMemoryAllocation(void* ptr) {
 	if (ptr == NULL) {
 		printf("FATAL ERROR! MEMORY ALLOCATION FAILED!\n");
+		exit(1);
+	}
+}
+
+void checkFile(FILE* filePtr) {
+	if (filePtr == NULL) {
+		printf("Failed opening the file. Exiting!\n");
 		exit(1);
 	}
 }

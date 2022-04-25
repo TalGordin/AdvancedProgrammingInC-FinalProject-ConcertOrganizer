@@ -13,7 +13,8 @@ void main() {
 	MusiciansFile[3] = NULL;
 	char str[SIZE];
 	InstrumentTree tree;
-	Musician** archive;
+	Musician** MusiciansGroup;
+	Musician*** MusiciansCollection;
 
 	for (int i = 0; i < 3; i++) {
 		MusiciansFile[i] = (char*)malloc(SIZE * sizeof(char));
@@ -36,10 +37,11 @@ void main() {
 	printf("%d", id);
 
 
-	archive = buildMusicianArchive(MusiciansFile, tree, 3);
+	MusiciansGroup = buildMusicianArchive(MusiciansFile, tree, 3);
 
 	MCS* MCSizes = makeMCSArr(instrumentAmount);
 	//printMusicianArchive(archive, 3);
-
+	MusiciansCollection = buildMusiciansCollection(instrumentAmount, MusiciansGroup, musiciansAmount, MCSizes);
+	printCollection(MusiciansCollection, MCSizes);
 
 }
