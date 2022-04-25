@@ -65,7 +65,7 @@ int findInsId(InstrumentTree tree, char* instrument);
 int findInsIdHelper(TreeNode* root, char* instrument);
 
 //3rd question
-Musician** buildMusicianArchive(char** MusiciansFile, InstrumentTree tree);
+Musician** buildMusicianArchive(char** MusiciansFile, InstrumentTree tree, int MusiciansAmount);
 Musician* addMusicianToArchive(char* musician, InstrumentTree tree, char* seps);
 Musician* makeEmptyMusician();
 MPIList makeEmptyMPIList();
@@ -79,5 +79,8 @@ Musician*** fillMusiciansCollection(Musician** MusiciansGroup, Musician*** Music
 Musician*** addMusicianToCollection(Musician* musician, Musician*** MusiciansCollection, MCS* MCSizes);
 MCS* makeMCSArr(int instrumentAmount);
 
+void printMusiciansCollection(Musician*** MusCollection, MCS* MCSizes, unsigned int instrumentAmount); //DEBUG
+
 //Memory
 void checkMemoryAllocation(void* ptr);
+void checkFile(FILE* filePtr);

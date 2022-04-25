@@ -232,6 +232,19 @@ void printMusicianArchive(Musician** archive, int musiciansAmount) {
 
 }
 
+void printMusiciansCollection(Musician*** MusCollection, MCS* MCSizes, unsigned int instrumentAmount) {
+	IDX instrument, musician;
+	for(instrument = 0; instrument < instrumentAmount; instrument++) {
+		printf("~~~Musicians who play on instrument #%d:~~~\n", instrument);
+
+		for(musician = 0; musician < MCSizes[instrument].logSize; musician++){
+			printf("%s", MusCollection[instrument][musician]->name[0]);
+			if (musician == MCSizes[instrument].logSize - 1) printf(", ");
+			else printf("\n");
+		}
+	}
+}
+
 //******************************************QUESTION4*************************
 
 //NOTE TO SELVES: We pretend to have the node amount- need to get it from somewhere!

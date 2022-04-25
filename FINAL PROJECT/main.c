@@ -42,6 +42,6 @@ void main() {
 	MCS* MCSizes = makeMCSArr(instrumentAmount);
 	//printMusicianArchive(archive, 3);
 	MusiciansCollection = buildMusiciansCollection(instrumentAmount, MusiciansGroup, musiciansAmount, MCSizes);
-	printCollection(MusiciansCollection, MCSizes);
+	printCollection(MusiciansCollection, MCSizes, instrumentAmount);
 
 }
